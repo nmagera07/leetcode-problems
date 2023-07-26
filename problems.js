@@ -32,3 +32,32 @@ var removeElement = function(nums, val) {
 
 };
 
+
+// search insert position
+
+var searchInsert = function(nums, target) {
+    let targetIndex = nums.indexOf(target)
+    let arr = nums
+
+    if(nums.includes(target)) {
+        return targetIndex
+    } else {
+        arr.push(target)
+        arr.sort((a,b) => a - b)
+
+        return arr.indexOf(target)
+    }
+
+    console.log(arr)
+};
+
+
+// plus one
+
+var plusOne = function(digits) {
+    let num = BigInt(digits.join('')) + BigInt(1)
+    let arr = num.toString().split('')
+
+    return arr.map(num => parseInt(num))
+};
+
