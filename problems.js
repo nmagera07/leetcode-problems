@@ -61,3 +61,36 @@ var plusOne = function(digits) {
     return arr.map(num => parseInt(num))
 };
 
+
+// add binary
+
+var addBinary = function(a, b) {
+   let num1 = BigInt('0b' + a)
+   let num2 = BigInt('0b' + b)
+   let sum = num1 + num2
+
+   return sum.toString(2)  
+};
+
+
+// longest common prefix
+
+var longestCommonPrefix = function(strs) {
+    // two loops, one to check the letters in the string, and the other to check each string
+    // if common letters are found, add them to empty string
+    // if no common letters are found, return empty string
+
+    if(!strs.length) return ''
+
+    for(let i = 0; i < strs[0].length; i++) {
+        for(let j = 1; j < strs.length; j++) {
+            if(strs[0][i] !== strs[j][i]) {
+                return strs[0].slice(0,i)
+            }
+        }
+    }
+
+    return strs[0]
+};
+
+
